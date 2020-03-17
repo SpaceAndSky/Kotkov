@@ -1,5 +1,6 @@
 <?php
 $is_auth = rand(0, 1);
+<<<<<<< HEAD
 $category_array =array("Доски и лыжи","Крепления","Ботинки","Одежда","Инструменты","Разное");
 $user_name = 'Максим'; // укажите здесь ваше имя
 $lots_array =array(
@@ -10,6 +11,10 @@ $lots_array =array(
 					array("name" => "Куртка для сноуборда DC Mutiny Charocal", "category" => "Одежда", "price" => 7500, "url" => "img/lot-5.jpg"),
 					array("name" => "Маска Oakley Canopy", "category" => "Разное", "price" => 5400, "url" => "img/lot-6.jpg")
 				  );
+=======
+
+$user_name = 'Максим'; // укажите здесь ваше имя
+>>>>>>> faf8c8c40ee4bec86753166712cdd156e752ce3a
 ?>
 <!DOCTYPE html>
 <html lang="ru">
