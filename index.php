@@ -1,15 +1,15 @@
 <?php
 $is_auth = rand(0, 1);
 
-$user_name = ''; // укажите здесь ваше имя
+$user_name = 'Максим'; // укажите здесь ваше имя
 ?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Главная</title>
-    <link href="../css/normalize.min.css" rel="stylesheet">
-    <link href="../css/style.css" rel="stylesheet">
+    <link href="css/normalize.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
 <div class="page-wrapper">
@@ -18,7 +18,7 @@ $user_name = ''; // укажите здесь ваше имя
     <div class="main-header__container container">
         <h1 class="visually-hidden">YetiCave</h1>
         <a class="main-header__logo">
-            <img src="../img/logo.svg" width="160" height="39" alt="Логотип компании YetiCave">
+            <img src="img/logo.svg" width="160" height="39" alt="Логотип компании YetiCave">
         </a>
         <form class="main-header__search" method="get" action="https://echo.htmlacademy.ru" autocomplete="off">
             <input type="search" name="search" placeholder="Поиск лота">
@@ -27,8 +27,30 @@ $user_name = ''; // укажите здесь ваше имя
         <a class="main-header__add-lot button" href="pages/add-lot.html">Добавить лот</a>
 
         <nav class="user-menu">
-            <?php
-            if($is_auth == 0)
+            
+            <? if($is_auth == 1) 
+            {
+            	?>
+            	<div class="user-menu__image">
+   	 			<img src="img/user.jpg" width="40" height="40" alt="Пользователь">
+  				</div>
+  				<div class="user-menu__logged">
+    			<p><? echo $user_name ?></p>
+  				</div>
+            <? 
+       		}
+            else 
+            {?>
+            	<ul class="user-menu__list">
+   	 			<li class="user-menu__item">
+      			<a href="#">Регистрация</a>
+    			</li>
+    			<li class="user-menu__item">
+      			<a href="#">Вход</a>
+    			</li>
+  				</ul>
+  				<?
+            }
             ?>
         <!-- здесь должен быть PHP код для показа меню и данных пользователя -->
 
