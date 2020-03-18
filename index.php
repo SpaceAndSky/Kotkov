@@ -12,6 +12,19 @@ $lots_array =array(
 					array("name" => "Маска Oakley Canopy", "category" => "Разное", "price" => 5400, "url" => "img/lot-6.jpg")
 				  );
 $user_name = 'Максим'; // укажите здесь ваше имя
+function ceilprice($i,$bool)
+{
+	$i = ceil($i);
+	if ($i > 1000)
+	{
+		$i = number_format($i, 0 , ',', ' ');
+	}
+	if ($bool == true)
+	{
+		$i = $i . "<p class='rub'>₽</p>";
+	}
+		return $i;
+}
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -78,7 +91,7 @@ $user_name = 'Максим'; // укажите здесь ваше имя
              foreach ($category_array as $key => $value) 
              { 
              	?>
-             	<li class="promo__item promo__item--boards"><a class="promo__link" href="pages/all-lots.html"><? echo $value ?></a></li>
+             	<li class="promo__item promo__item--boards"><a class="promo__link" href="pages/all-lots.html"><?=$value ?></a></li>
              <?	
              }
             ?>
@@ -96,12 +109,12 @@ $user_name = 'Максим'; // укажите здесь ваше имя
                     <img src="<?=$stroka["url"]?>" width="350" height="260" alt="">
                 </div>
                 <div class="lot__info">            	
-                    <span class="lot__category"><? echo $stroka["category"] ?></span>
+                    <span class="lot__category"><?=$stroka["category"] ?></span>
                     <h3 class="lot__title"><a class="text-link" href="pages/lot.html"><?=$stroka["name"] ?></a></h3>
                     <div class="lot__state">
                         <div class="lot__rate">
                             <span class="lot__amount">Стартовая цена</span>
-                            <span class="lot__cost"><? echo $stroka["price"] ?><b class="rub">р</b></span>
+                            <span class="lot__cost"><?=ceilprice($stroka["price"],true) ?></span>
                         </div>
                         <div class="lot__timer timer">
                             12:23
@@ -126,7 +139,7 @@ $user_name = 'Максим'; // укажите здесь ваше имя
             <?
              foreach ($category_array as $key => $value) 
              { ?>
-             	<li class="nav__item"><a href="pages/all-lots.html"><? echo $value ?> </a></li>
+             	<li class="nav__item"><a href="pages/all-lots.html"><?=$value ?> </a></li>
              	<?
              }
             ?>
