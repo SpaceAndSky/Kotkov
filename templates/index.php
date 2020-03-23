@@ -33,7 +33,7 @@
                             <span class="lot__cost"><?=ceilprice($stroka["price"],true) ?></span>
                         </div>
                         <div class="lot__timer timer">
-                            12:23
+                            <?=date("H:i", $ny_date)?>
                         </div>
                     </div>
                 </div>

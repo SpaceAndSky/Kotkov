@@ -1,5 +1,6 @@
 <?
 $is_auth = rand(0, 1);
+$ny_date =strtotime("tomorrow ") - strtotime("now gmt");
 
 $category_array =array("Доски и лыжи","Крепления","Ботинки","Одежда","Инструменты","Разное");
 $lots_array =array(
