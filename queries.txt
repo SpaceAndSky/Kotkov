@@ -1,0 +1,55 @@
+INSERT INTO `categories` (`name`) VALUES
+('Доски и лыжи'),
+('Крепления'),
+('Ботинки'),
+('Одежда'),
+('Инструменты'),
+('Разное');
+
+
+
+Insert Into users (name, email, password_hash) VALUES ("Max", "sas@mail.ru", "###67###"), ("Nataly", "jmnt@mail.ru", "###68###"), ("Zak", "zik@mail.ru", "###66###");
+
+
+
+INSERT INTO `lots` ( `name`, `description`, `price`, `step`, `create_ts`, `expire_ts`, `img`, `category_id`, `best_bet`) VALUES
+('2014 Rossignol District Snowboard', 'Описание временно отсутствует', 10999, 500, 1512328601, 1513428601, 'img/lot-1.jpg', 1, 1),
+('DC Ply Mens 2016/2017 Snowboard', 'Описание временно отсутствует', 159999, 500, 1512328601, 1513428601, 'img/lot-2.jpg', 1,2 ),
+('Крепления Union Contact Pro 2015 года размер L/XL', 'Описание временно отсутствует', 8000, 500, 1512328601, 1513428601, 'img/lot-3.jpg', 2,3),
+('Ботинки для сноуборда DC Mutiny Charocal', 'Описание временно отсутствует', 10999, 500, 1512328601, 1513428601, 'img/lot-4.jpg', 3,4),
+('Куртка для сноуборда DC Mutiny Charocal', 'Описание временно отсутствует', 7500, 500, 1512328601, 1513428601, 'img/lot-5.jpg', 4,5),
+('Маска Oakley Canopy', 'Описание временно отсутствует', 5400, 500, 1512328601, 1513428601, 'img/lot-6.jpg', 6,6);
+
+
+
+INSERT INTO bets (lot_id, user_id, price,create_ts) VALUES 
+(1,2,5642,1512328601), 
+(2,3,12365,1512328601), 
+(3,1,8600,1512328601), 
+(4,2,8622,1512328601), 
+(5,3,86587,1512328601), 
+(6,1,1458,1512328601); 
+
+
+SELECT name FROM categories
+
+
+SELECT l.name,l.price as "start price", img, c.name ,b.price as "best bet price"
+FROM lots as l 
+JOIN categories as c on l.category_id = c.id 
+JOIN bets as b on l.best_bet=b.id 
+where expire_ts >1512428601
+
+
+SELECT *
+FROM lots
+JOIN categories on lots.category_id = categories.id
+where lots.id = 1
+
+
+SELECT name
+from lots
+where id = 4
+
+
+SELECT * from bets where lot_id =2
